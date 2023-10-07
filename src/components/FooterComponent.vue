@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-900 text-white py-8">
     <div class="container mx-auto flex flex-col items-center">
-      <p class="mb-2">2023 &copy; Designed with ❤️ By Eko Teguh Muhammadi</p>
+      <p class="text-center mb-2">2023 &copy; Designed with ❤️ By Eko Teguh Muhammadi</p>
 
       <!-- Ikonya dapat diambil dari font awesome atau ikon lainnya -->
       <div class="flex space-x-4 mt-4">

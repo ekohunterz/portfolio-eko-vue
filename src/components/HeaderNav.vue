@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="{
-      'bg-opacity-80 bg-indigo-900 backdrop-blur-sm border-b-gray-400 shadow-sm': isScrolled,
+      'bg-opacity-80  bg-indigo-900 backdrop-blur-sm border-b-gray-400 shadow-sm': isScrolled,
       'bg-opacity-0': !isScrolled
     }"
     class="p-4 z-[9999] fixed top-0 right-0 left-0 transition-all duration-300"
@@ -57,28 +57,31 @@
   </nav>
 
   <!-- Mobile menu (hidden by default) -->
-  <div v-if="isMenuOpen" class="md:hidden pt-24 bg-gray-700 p-2">
+  <div
+    v-if="isMenuOpen"
+    class="fixed top-0 right-0 left-0 z-[9998] md:hidden pt-24 bg-indigo-900 px-8 pb-3"
+  >
     <button
       @click="scrollToSection('about')"
-      class="block text-white text-lg font-semibold py-2 hover:bg-gray-600"
+      class="block text-white text-lg font-semibold py-2 hover:text-secondary"
     >
       About
     </button>
     <button
       @click="scrollToSection('project')"
-      class="block text-white text-lg font-semibold py-2 hover:bg-gray-600"
+      class="block text-white text-lg font-semibold py-2 hover:text-secondary"
     >
       Project
     </button>
     <button
       @click="scrollToSection('certificate')"
-      class="block text-white text-lg font-semibold py-2 hover:bg-gray-600"
+      class="block text-white text-lg font-semibold py-2 hover:text-secondary"
     >
       Certificate
     </button>
     <button
       @click="scrollToSection('contact')"
-      class="block text-white text-lg font-semibold py-2 hover:bg-gray-600"
+      class="block text-white text-lg font-semibold py-2 hover:text-secondary"
     >
       Contact
     </button>
