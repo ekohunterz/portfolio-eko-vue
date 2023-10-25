@@ -7,11 +7,9 @@
   </a>
 </template>
 
-<script>
-export default {
-  props: {
-    href: String,
-    title: String
-  }
-}
+<script setup>
+defineProps({
+  href: String,
+  title: String
+})
 </script>

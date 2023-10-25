@@ -58,10 +58,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    project: Object // Objek proyek untuk ditampilkan dalam kartu
-  }
-}
+<script setup>
+defineProps({
+  project: Object // Objek proyek untuk ditampilkan dalam kartu
+})
 </script>

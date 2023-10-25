@@ -1,3 +1,14 @@
+<script setup>
+import {
+  IconBrandInstagram,
+  IconBrandGithub,
+  IconBrandWhatsapp,
+  IconBrandLinkedin
+} from '@tabler/icons-vue'
+import ButtonYellow from '../components/ButtonYellow.vue'
+import '/foto.png' // Impor gambar agar dapat digunakan
+</script>
+
 <template>
   <section id="hero" class="min-h-screen">
     <div className="container ">
@@ -80,26 +91,3 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import ButtonYellow from '../components/ButtonYellow.vue'
-import '/foto.png' // Impor gambar agar dapat digunakan
-</script>
-
-<script>
-import {
-  IconBrandInstagram,
-  IconBrandGithub,
-  IconBrandWhatsapp,
-  IconBrandLinkedin
-} from '@tabler/icons-vue'
-
-export default {
-  components: {
-    IconBrandInstagram,
-    IconBrandGithub,
-    IconBrandWhatsapp,
-    IconBrandLinkedin
-  }
-}
-</script>

@@ -1,3 +1,34 @@
+<script setup>
+import { ref, onMounted, onBeforeMount } from 'vue'
+
+const isMenuOpen = ref(false)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  if (window.scrollY > 50) {
+    isScrolled.value = true
+  } else {
+    isScrolled.value = false
+  }
+}
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+onBeforeMount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
 <template>
   <nav
     :class="{
@@ -87,38 +118,3 @@
     </button>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      isMenuOpen: false,
-      isScrolled: false
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  beforeMount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll() {
-      if (window.scrollY > 50) {
-        this.isScrolled = true
-      } else {
-        this.isScrolled = false
-      }
-    },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-    },
-    scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-  }
-}
-</script>

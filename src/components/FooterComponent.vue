@@ -1,3 +1,12 @@
+<script setup>
+import {
+  IconBrandInstagram,
+  IconBrandGithub,
+  IconBrandWhatsapp,
+  IconBrandLinkedin
+} from '@tabler/icons-vue'
+</script>
+
 <template>
   <footer class="bg-gray-900 text-white py-8">
     <div class="container mx-auto flex flex-col items-center">
@@ -37,21 +46,3 @@
     </div>
   </footer>
 </template>
-
-<script>
-import {
-  IconBrandInstagram,
-  IconBrandGithub,
-  IconBrandWhatsapp,
-  IconBrandLinkedin
-} from '@tabler/icons-vue'
-
-export default {
-  components: {
-    IconBrandInstagram,
-    IconBrandGithub,
-    IconBrandWhatsapp,
-    IconBrandLinkedin
-  }
-}
-</script>

@@ -56,7 +56,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import {
   IconBrandHtml5,
   IconBrandCss3,
@@ -68,18 +68,4 @@ import {
   IconBrandBootstrap,
   IconBrandTailwind
 } from '@tabler/icons-vue'
-
-export default {
-  components: {
-    IconBrandHtml5,
-    IconBrandCss3,
-    IconBrandJavascript,
-    IconBrandLaravel,
-    IconBrandPhp,
-    IconBrandMysql,
-    IconBrandVue,
-    IconBrandBootstrap,
-    IconBrandTailwind
-  }
-}
 </script>

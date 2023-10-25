@@ -1,6 +1,28 @@
+<script setup>
+import { EffectCoverflow, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import ProjectCard from './ProjectCard.vue'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/effect-coverflow'
+
+defineProps({
+  projects: Array
+})
+
+const onSwiper = (swiper) => {
+  console.log(swiper)
+}
+const onSlideChange = () => {
+  console.log('slide change')
+}
+</script>
+
 <template>
   <swiper
-    :modules="modules"
+    :modules="[Navigation, EffectCoverflow]"
     :breakpoints="{
       '1024': {
         slidesPerView: 2,
@@ -29,38 +51,3 @@
     </swiper-slide>
   </swiper>
 </template>
-
-<script>
-import { EffectCoverflow, Navigation } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import ProjectCard from './ProjectCard.vue'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/effect-coverflow'
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-    ProjectCard
-  },
-  props: {
-    projects: Array
-  },
-  setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper)
-    }
-    const onSlideChange = () => {
-      console.log('slide change')
-    }
-    return {
-      onSwiper,
-      onSlideChange,
-      modules: [Navigation, EffectCoverflow]
-    }
-  }
-}
-</script>

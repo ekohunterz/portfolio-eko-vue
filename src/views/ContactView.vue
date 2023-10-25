@@ -1,3 +1,26 @@
+<script setup>
+import { ref } from 'vue'
+import { IconBrandWhatsapp, IconMail } from '@tabler/icons-vue'
+import emailjs from '@emailjs/browser'
+
+const form = ref(null)
+const successMessage = ref('')
+const errorMessage = ref('')
+
+const sendEmail = () => {
+  emailjs.sendForm('service_30ghp26', 'template_fkz8nqx', form.value, 'o2fVgPqnXgrsimN67').then(
+    (result) => {
+      successMessage.value = 'Email berhasil terkirim!'
+      console.log(result.text)
+    },
+    (error) => {
+      errorMessage.value = 'Gagal mengirim email. Silakan coba lagi.'
+      console.log(error.text)
+    }
+  )
+}
+</script>
+
 <template>
   <section id="contact" class="min-h-[90vh]">
     <div class="container py-20 font-poppins">
@@ -97,37 +120,3 @@
     </div>
   </section>
 </template>
-
-<script>
-import { IconBrandWhatsapp, IconMail } from '@tabler/icons-vue'
-import emailjs from '@emailjs/browser'
-
-export default {
-  components: {
-    IconBrandWhatsapp,
-    IconMail
-  },
-  data() {
-    return {
-      successMessage: '',
-      errorMessage: ''
-    }
-  },
-  methods: {
-    sendEmail() {
-      emailjs
-        .sendForm('service_30ghp26', 'template_fkz8nqx', this.$refs.form, 'o2fVgPqnXgrsimN67')
-        .then(
-          (result) => {
-            this.successMessage = 'Email sent successfully!'
-            console.log(result.text)
-          },
-          (error) => {
-            this.errorMessage = 'Failed to send email. Please try again.'
-            console.log(error.text)
-          }
-        )
-    }
-  }
-}
-</script>
